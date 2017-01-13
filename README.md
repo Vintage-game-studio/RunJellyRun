@@ -1,2 +1,0 @@
-# RunJellyRun
-Platform Game
