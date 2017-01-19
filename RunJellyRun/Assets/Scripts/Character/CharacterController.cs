@@ -2,17 +2,13 @@
 using UnityEngine;
 using System.Collections;
 
-public class CharacterController : MonoBehaviour  {
+public class CharacterController: MonoBehaviour  {
 
     public ControllerConfigurations Configs;
 
-    protected Rigidbody _rBody;
+    protected Rigidbody2D _rBody;
     private bool onCollision;
 
-    public CharacterController(ControllerConfigurations configs)
-    {
-        Configs = configs;
-    }
 }
 
 [Serializable]
