@@ -18,17 +18,114 @@
       <file leaf-file-name="PlayerController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+            <state relative-caret-position="0">
+              <caret line="41" column="42" lean-forward="false" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
               <folding>
-                <marker date="1484856162000" expanded="true" signature="6:58" ph="..." />
-                <marker date="1484856162000" expanded="true" signature="126:1806" ph="{...}" />
-                <marker date="1484856162000" expanded="true" signature="464:575" ph="{...}" />
-                <marker date="1484856162000" expanded="true" signature="630:972" ph="{...}" />
-                <marker date="1484856162000" expanded="true" signature="998:1160" ph="{...}" />
-                <marker date="1484856162000" expanded="true" signature="1192:1803" ph="{...}" />
-                <marker date="1484856162000" expanded="true" signature="1276:1549" ph="{...}" />
-                <marker date="1484856162000" expanded="true" signature="1568:1797" ph="{...}" />
+                <marker date="1484951401000" expanded="true" signature="6:58" ph="..." />
+                <marker date="1484951401000" expanded="true" signature="126:1805" ph="{...}" />
+                <marker date="1484951401000" expanded="true" signature="463:574" ph="{...}" />
+                <marker date="1484951401000" expanded="true" signature="629:971" ph="{...}" />
+                <marker date="1484951401000" expanded="true" signature="997:1159" ph="{...}" />
+                <marker date="1484951401000" expanded="true" signature="1191:1802" ph="{...}" />
+                <marker date="1484951401000" expanded="true" signature="1275:1548" ph="{...}" />
+                <marker date="1484951401000" expanded="true" signature="1567:1796" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdvanceBlock.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/LevelGenerator/AdvanceBlock.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="84" column="19" lean-forward="false" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="19" />
+              <folding>
+                <marker date="1485026727000" expanded="true" signature="6:116" ph="..." />
+                <marker date="1485026727000" expanded="true" signature="151:7108" ph="{...}" />
+                <marker date="1485026727000" expanded="false" signature="487:1199" ph="{...}" />
+                <marker date="1485026727000" expanded="true" signature="949:1192" ph="{...}" />
+                <marker date="1485026727000" expanded="false" signature="1245:2001" ph="{...}" />
+                <marker date="1485026727000" expanded="true" signature="2039:2433" ph="{...}" />
+                <marker date="1485026727000" expanded="true" signature="2169:2319" ph="{...}" />
+                <marker date="1485026727000" expanded="false" signature="2479:4884" ph="{...}" />
+                <marker date="1485026727000" expanded="true" signature="2548:3426" ph="Get parameters" />
+                <marker date="1485026727000" expanded="true" signature="2650:3406" ph="{...}" />
+                <marker date="1485026727000" expanded="true" signature="2689:2917" ph="{...}" />
+                <marker date="1485026727000" expanded="true" signature="2760:2903" ph="{...}" />
+                <marker date="1485026727000" expanded="true" signature="2946:3149" ph="{...}" />
+                <marker date="1485026727000" expanded="true" signature="2992:3135" ph="{...}" />
+                <marker date="1485026727000" expanded="true" signature="3178:3396" ph="{...}" />
+                <marker date="1485026727000" expanded="true" signature="3249:3382" ph="{...}" />
+                <marker date="1485026727000" expanded="true" signature="3457:4859" ph="{...}" />
+                <marker date="1485026727000" expanded="true" signature="4925:5404" ph="{...}" />
+                <marker date="1485026727000" expanded="true" signature="4972:5079" ph="{...}" />
+                <marker date="1485026727000" expanded="false" signature="5449:6563" ph="{...}" />
+                <marker date="1485026727000" expanded="false" signature="5623:6557" ph="{...}" />
+                <marker date="1485026727000" expanded="false" signature="6638:7106" ph="{...}" />
+                <marker date="1485026727000" expanded="true" signature="6735:6900" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Replacer.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Tools/Replacer.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+              <folding>
+                <marker date="1429365378000" expanded="true" signature="6:44" ph="..." />
+                <marker date="1429365378000" expanded="true" signature="83:962" ph="{...}" />
+                <marker date="1429365378000" expanded="true" signature="179:407" ph="{...}" />
+                <marker date="1429365378000" expanded="true" signature="307:401" ph="{...}" />
+                <marker date="1429365378000" expanded="true" signature="475:960" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/Player.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-173">
+              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="58" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Killer.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/Killer.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ForceSurface.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/ForceSurface.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Killer.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/Killer.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+              <folding>
+                <marker date="1485126888000" expanded="true" signature="6:44" ph="..." />
+                <marker date="1485126888000" expanded="true" signature="82:502" ph="{...}" />
+                <marker date="1485126888000" expanded="true" signature="132:138" ph="{...}" />
+                <marker date="1485126888000" expanded="true" signature="186:441" ph="{...}" />
+                <marker date="1485126888000" expanded="true" signature="306:438" ph="{...}" />
+                <marker date="1485126888000" expanded="true" signature="494:500" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -37,14 +134,14 @@
       <file leaf-file-name="AdvanceBlock.cs" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/LevelGenerator/AdvanceBlock.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1326">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpriteInspector.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SpriteInspector.cs" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/SpriteInspector.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -54,20 +151,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CharacterController.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <marker date="1484772669000" expanded="true" signature="6:58" ph="..." />
-                <marker date="1484772669000" expanded="true" signature="109:224" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>haz</find>
+    </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -75,16 +164,21 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterShape.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/PlayerCharacter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Character/PlayerController.cs" />
         <option value="$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/LevelGenerator/AdvanceBlock.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelGenerator/AdvanceBlock.cs" />
+        <option value="$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/Killer.cs" />
+        <option value="$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/ForceSurface.cs" />
         <option value="$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/SpriteInspector.cs" />
+        <option value="$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character/Killer.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="817" />
+    <option name="height" value="815" />
   </component>
   <component name="ProjectView">
     <navigator currentView="SolutionExplorer" proportions="" version="1">
@@ -110,50 +204,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="RunJellyRun (2 projects)" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assembly-CSharp-Editor" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RunJellyRun (2 projects)" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assembly-CSharp" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assets" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Scripts" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Character" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RunJellyRun (2 projects)" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assembly-CSharp" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
           </PATH>
@@ -208,11 +258,15 @@
       <workItem from="1484766353609" duration="815000" />
       <workItem from="1484771204757" duration="5280000" />
       <workItem from="1484856022299" duration="629000" />
+      <workItem from="1484950942534" duration="458000" />
+      <workItem from="1485001965900" duration="680000" />
+      <workItem from="1485002851276" duration="1577000" />
+      <workItem from="1485123966875" duration="1112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14102000" />
+    <option name="totallyTimeSpent" value="17929000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -224,28 +278,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="817" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="815" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21530758" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16881259" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965517" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -255,131 +309,95 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/LevelGenerator/AdvanceBlock.cs</url>
+          <line>177</line>
+          <properties startOffset="5088" endOffset="5147" documentPath="$PROJECT_DIR$/Assets/Scripts/LevelGenerator/AdvanceBlock.cs" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="42" lean-forward="false" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+          <folding>
+            <marker date="1484951401000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484951401000" expanded="true" signature="126:1805" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="463:574" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="629:971" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="997:1159" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1191:1802" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1275:1548" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1567:1796" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/LevelGenerator/AdvanceBlock.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="70" column="5" lean-forward="false" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+          <folding>
+            <marker date="1485026727000" expanded="true" signature="6:116" ph="..." />
+            <marker date="1485026727000" expanded="true" signature="151:7108" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="487:1199" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="949:1192" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="1245:2001" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2039:2433" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2169:2319" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="2479:4884" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2548:3426" ph="Get parameters" />
+            <marker date="1485026727000" expanded="true" signature="2650:3406" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2689:2917" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2760:2903" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2946:3149" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2992:3135" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="3178:3396" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="3249:3382" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="3457:4859" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="4925:5404" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="4972:5079" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="5449:6563" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="5623:6557" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="6638:7106" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="6735:6900" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/Player.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="58" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/Killer.cs">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1484856162000" expanded="true" signature="6:58" ph="..." />
-            <marker date="1484856162000" expanded="true" signature="126:1806" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="464:575" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="630:972" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="998:1160" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="1192:1803" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="1276:1549" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="1568:1797" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs">
+    <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/ForceSurface.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <marker date="1484772669000" expanded="true" signature="6:58" ph="..." />
-            <marker date="1484772669000" expanded="true" signature="109:224" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerCharacter.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-          <folding>
-            <marker date="1484772669000" expanded="true" signature="6:58" ph="..." />
-            <marker date="1484772669000" expanded="true" signature="109:224" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="60" />
-          <folding>
-            <marker date="1484856162000" expanded="true" signature="6:58" ph="..." />
-            <marker date="1484856162000" expanded="true" signature="126:1806" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="464:575" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="630:972" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="998:1160" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="1192:1803" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="1276:1549" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="1568:1797" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerCharacter.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="60" />
-          <folding>
-            <marker date="1484856162000" expanded="true" signature="6:58" ph="..." />
-            <marker date="1484856162000" expanded="true" signature="126:1806" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="464:575" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="630:972" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="998:1160" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="1192:1803" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="1276:1549" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="1568:1797" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-          <folding>
-            <marker date="1484772669000" expanded="true" signature="6:58" ph="..." />
-            <marker date="1484772669000" expanded="true" signature="109:224" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterShape.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterShape.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerCharacter.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <marker date="1484772669000" expanded="true" signature="6:58" ph="..." />
-            <marker date="1484772669000" expanded="true" signature="109:224" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding>
-            <marker date="1484856162000" expanded="true" signature="6:58" ph="..." />
-            <marker date="1484856162000" expanded="true" signature="126:1806" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="464:575" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="630:972" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="998:1160" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="1192:1803" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="1276:1549" ph="{...}" />
-            <marker date="1484856162000" expanded="true" signature="1568:1797" ph="{...}" />
-          </folding>
+        <state relative-caret-position="465">
+          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/LevelGenerator/AdvanceBlock.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1326">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -390,6 +408,407 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <marker date="1484772669000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484772669000" expanded="true" signature="109:224" ph="{...}" />
+            <marker date="1484772669000" expanded="true" signature="278:466" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="42" lean-forward="false" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+          <folding>
+            <marker date="1484951401000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484951401000" expanded="true" signature="126:1805" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="463:574" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="629:971" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="997:1159" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1191:1802" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1275:1548" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1567:1796" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/LevelGenerator/AdvanceBlock.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1485026727000" expanded="true" signature="6:116" ph="..." />
+            <marker date="1485026727000" expanded="true" signature="151:7108" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="487:1199" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="949:1192" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="1245:2001" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2039:2433" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2169:2319" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="2479:4884" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2548:3426" ph="Get parameters" />
+            <marker date="1485026727000" expanded="true" signature="2650:3406" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2689:2917" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2760:2903" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2946:3149" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2992:3135" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="3178:3396" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="3249:3382" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="3457:4859" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="4925:5404" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="4972:5079" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="5449:6563" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="5623:6557" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="6638:7106" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="6735:6900" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/LevelGenerator/AdvanceBlock.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/SpriteInspector.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <marker date="1484772669000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484772669000" expanded="true" signature="109:224" ph="{...}" />
+            <marker date="1484772669000" expanded="true" signature="278:466" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="42" lean-forward="true" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+          <folding>
+            <marker date="1484951401000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484951401000" expanded="true" signature="126:1805" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="463:574" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="629:971" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="997:1159" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1191:1802" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1275:1548" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1567:1796" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/LevelGenerator/AdvanceBlock.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/SpriteInspector.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <marker date="1484772669000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484772669000" expanded="true" signature="109:224" ph="{...}" />
+            <marker date="1484772669000" expanded="true" signature="278:466" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/LevelGenerator/AdvanceBlock.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/SpriteInspector.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <marker date="1484772669000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484772669000" expanded="true" signature="109:224" ph="{...}" />
+            <marker date="1484772669000" expanded="true" signature="278:466" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding>
+            <marker date="1484951401000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484951401000" expanded="true" signature="126:1805" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="463:574" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="629:971" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="997:1159" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1191:1802" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1275:1548" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1567:1796" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1484951401000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484951401000" expanded="true" signature="126:1805" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="463:574" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="629:971" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="997:1159" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1191:1802" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1275:1548" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1567:1796" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <marker date="1484772669000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484772669000" expanded="true" signature="109:224" ph="{...}" />
+            <marker date="1484772669000" expanded="true" signature="278:466" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerCharacter.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding>
+            <marker date="1484772669000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484772669000" expanded="true" signature="109:224" ph="{...}" />
+            <marker date="1484772669000" expanded="true" signature="278:466" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="60" />
+          <folding>
+            <marker date="1484951401000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484951401000" expanded="true" signature="126:1805" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="463:574" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="629:971" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="997:1159" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1191:1802" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1275:1548" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1567:1796" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerCharacter.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="60" />
+          <folding>
+            <marker date="1484951401000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484951401000" expanded="true" signature="126:1805" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="463:574" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="629:971" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="997:1159" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1191:1802" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1275:1548" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1567:1796" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding>
+            <marker date="1484772669000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484772669000" expanded="true" signature="109:224" ph="{...}" />
+            <marker date="1484772669000" expanded="true" signature="278:466" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterShape.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterShape.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerCharacter.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/PlayerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="41" column="42" lean-forward="false" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+          <folding>
+            <marker date="1484951401000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484951401000" expanded="true" signature="126:1805" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="463:574" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="629:971" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="997:1159" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1191:1802" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1275:1548" ph="{...}" />
+            <marker date="1484951401000" expanded="true" signature="1567:1796" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/LevelGenerator/AdvanceBlock.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/Killer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/ForceSurface.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <marker date="1484772669000" expanded="true" signature="6:58" ph="..." />
+            <marker date="1484772669000" expanded="true" signature="109:224" ph="{...}" />
+            <marker date="1484772669000" expanded="true" signature="278:466" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/SpriteInspector.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/RunJellyRun/RunJellyRun/Assets/RunJellyRun/Scripts/Player.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-173">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="58" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/LevelGenerator/AdvanceBlock.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="84" column="19" lean-forward="false" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="19" />
+          <folding>
+            <marker date="1485026727000" expanded="true" signature="6:116" ph="..." />
+            <marker date="1485026727000" expanded="true" signature="151:7108" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="487:1199" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="949:1192" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="1245:2001" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2039:2433" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2169:2319" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="2479:4884" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2548:3426" ph="Get parameters" />
+            <marker date="1485026727000" expanded="true" signature="2650:3406" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2689:2917" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2760:2903" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2946:3149" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="2992:3135" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="3178:3396" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="3249:3382" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="3457:4859" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="4925:5404" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="4972:5079" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="5449:6563" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="5623:6557" ph="{...}" />
+            <marker date="1485026727000" expanded="false" signature="6638:7106" ph="{...}" />
+            <marker date="1485026727000" expanded="true" signature="6735:6900" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Tools/Replacer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+          <folding>
+            <marker date="1429365378000" expanded="true" signature="6:44" ph="..." />
+            <marker date="1429365378000" expanded="true" signature="83:962" ph="{...}" />
+            <marker date="1429365378000" expanded="true" signature="179:407" ph="{...}" />
+            <marker date="1429365378000" expanded="true" signature="307:401" ph="{...}" />
+            <marker date="1429365378000" expanded="true" signature="475:960" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Character/Killer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding>
+            <marker date="1485126888000" expanded="true" signature="6:44" ph="..." />
+            <marker date="1485126888000" expanded="true" signature="82:502" ph="{...}" />
+            <marker date="1485126888000" expanded="true" signature="132:138" ph="{...}" />
+            <marker date="1485126888000" expanded="true" signature="186:441" ph="{...}" />
+            <marker date="1485126888000" expanded="true" signature="306:438" ph="{...}" />
+            <marker date="1485126888000" expanded="true" signature="494:500" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

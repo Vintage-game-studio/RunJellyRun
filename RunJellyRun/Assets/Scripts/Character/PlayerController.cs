@@ -5,7 +5,6 @@ using System.Collections;
 [Serializable]
 public class PlayerController : CharacterController
 {
-
     private Collision2D _collisionInfo;
     private Vector2 sNormal;
     private Vector2 playerDirectionOnSurface;

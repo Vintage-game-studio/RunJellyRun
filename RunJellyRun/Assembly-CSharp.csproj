@@ -50,7 +50,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Character\CharacterController.cs" />
+    <Compile Include="Assets\Scripts\Character\Killer.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\LevelGenerator\AdvanceBlock.cs" />
+    <Compile Include="Assets\Scripts\LevelGenerator\Block.cs" />
+    <Compile Include="Assets\Scripts\LevelGenerator\BlockRandomSequence.cs" />
+    <Compile Include="Assets\Scripts\LevelGenerator\BlockSeqence.cs" />
+    <Compile Include="Assets\Scripts\LevelGenerator\Genetator.cs" />
+    <Compile Include="Assets\Scripts\Tools\LineScatter.cs" />
+    <Compile Include="Assets\Scripts\Tools\Replacer.cs" />
     <Reference Include="UnityEngine.UI">
       <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
