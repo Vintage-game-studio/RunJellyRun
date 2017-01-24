@@ -12,12 +12,14 @@ public class PlayerController : CharacterController
     private float holdTime;
     private bool jump;
     private GameObject playerGO;
+    public static int Count;
 
     public readonly double MaxSlopeAngle = 100;
     public readonly double MaxVelocity = 8;
 
     void Start()
     {
+        Count++;
         playerGO = transform.GetChild(0).gameObject;
         _rBody = GetComponent<Rigidbody2D>();
     }
@@ -37,7 +39,7 @@ public class PlayerController : CharacterController
     public void Update()
     {
         if (Input.GetKey(KeyCode.Space))
-            holdTime += Time.deltaTime;
+            holdTime += Time.deltaTime*5;
 
         if (Input.GetKeyUp(KeyCode.Space))
             jump = true;
@@ -62,4 +64,12 @@ public class PlayerController : CharacterController
         }
     }
 
+    public void Kill()
+    {
+        _rBody.isKinematic = true;
+        Camera.main.transform.parent.GetComponent<CameraFollow>().Player = null;
+
+    }
+
 }
+
