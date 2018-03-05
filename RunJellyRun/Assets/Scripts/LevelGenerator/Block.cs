@@ -37,7 +37,7 @@ public class Block : MonoBehaviour
     {
         return CreateBlock(block, 0);
     }
-    protected Block CreateBlock(Block block, float angel)
+    protected Block CreateBlock(Block block, float angel,bool noCollider=false)
     {
         Block newBlock = ((GameObject)Instantiate(block.gameObject, Out.position, Quaternion.identity)).GetComponent<Block>();
 
@@ -48,6 +48,12 @@ public class Block : MonoBehaviour
 
         Out = newBlock.Out;
         newBlock.transform.localRotation = Quaternion.Euler(0, 0, Mathf.Ceil(angel*10)/10f);
+
+        if (noCollider)
+        {
+            newBlock.transform.GetChild(1).GetComponent<BoxCollider2D>().size=new Vector2(0.5f,1);
+        }
+        
         return newBlock;
     }
 

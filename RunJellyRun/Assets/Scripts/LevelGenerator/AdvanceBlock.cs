@@ -49,13 +49,17 @@ public class AdvanceBlock : Block
 
         int length = 1;
 
+        bool noCollider = false;
+        
         float startAngle = 0, endAngle = 0, deltaAngle = 0;
 
         if (param.Count > 1)
             length = (int) GetValue(param[1]);
 
         if (param.Count > 2)
+        {
             startAngle = GetValue(param[2]);
+        }
 
         if (param.Count > 3)
             endAngle = GetValue(param[3]);
@@ -65,9 +69,12 @@ public class AdvanceBlock : Block
         if (length > 1)
             deltaAngle = (endAngle - startAngle) / (length - 1);
 
+        if (startAngle == -90 || endAngle == 90)
+            noCollider = true;
+        
         if (newBlock != null)
             for (int i = 0; i < length; i++)
-                CreateBlock(newBlock, startAngle + deltaAngle * i);
+                CreateBlock(newBlock, startAngle + deltaAngle * i,noCollider);
     }
 
     private float GetValue(string s)

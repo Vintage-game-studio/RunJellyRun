@@ -20,4 +20,5 @@ public class ControllerConfigurations
     public float WallJumpAngle;
     public float WallJumpPower=100;
     public float JumpNumber;
+    public float Gravity;
 }
