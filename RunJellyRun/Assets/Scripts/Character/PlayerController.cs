@@ -17,6 +17,9 @@ public class PlayerController : CharacterController
     private bool forceUpdate;
     private float lastMagnitude = 0;
     private bool enterColl = false;
+    private float lastDis;
+    private Vector2 lastContact;
+    private Vector2 lastPos;
     
     public readonly double MaxSlopeAngle = 100;
     public readonly double MaxVelocity = 5;
@@ -28,6 +31,11 @@ public class PlayerController : CharacterController
         _rBody = GetComponent<Rigidbody2D>();
     }
 
+    public void ResetPos()
+    {
+        lastContact=Vector2.zero;
+        lastPos=Vector2.zero;
+    }
     private void OnCollisionEnter2D(Collision2D collisionInfo)
     {
         isJump = true;
@@ -36,6 +44,7 @@ public class PlayerController : CharacterController
         _collisionInfo = collisionInfo;
         if (collisionInfo.contacts.Length==0) return;
         sNormal = collisionInfo.contacts[0].normal;
+        lastContact = collisionInfo.contacts[0].point;
         Vector3 sVerNormal;
         //if (sNormal.x<0) return;
         sVerNormal = Quaternion.AngleAxis(-90, Vector3.forward) * new Vector3(sNormal.x,sNormal.y,0);
@@ -62,6 +71,7 @@ public class PlayerController : CharacterController
 
     }
 
+
     public void Update()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -70,8 +80,36 @@ public class PlayerController : CharacterController
         if (enterColl && Input.GetKeyUp(KeyCode.Space))
             jump = true;
         
+        if (jump && isJump && enterColl)
+        {
+            isJump = false;
+            _rBody.AddForce(
+                new Vector2(0.5f,1)*
+                (Configs.JumpPower * (1+Math.Min(holdTime,0.5f))*(playerDirectionOnSurface.y+1)),
+                ForceMode2D.Impulse);
+
+            jump = false;
+            holdTime = 0;
+            enterColl = false;
+        }
+        
+    }
+
+    private void FixedUpdate()
+    {
         if (!forceUpdate) return;
 
+        if (lastPos == lastContact)
+            this.transform.Translate(0.1f, 0.1f, 0);
+
+        float dis = Vector2.Distance(lastContact, this.transform.position);
+        Vector2 currentPos = new Vector2(this.transform.position.x, this.transform.position.y);
+        
+        if (lastContact != null && dis > 12 && Vector2.Distance(currentPos,lastPos)>0.5)
+            this.transform.position = lastPos;
+        else
+            lastPos = this.transform.position;
+        
         if (_rBody.velocity.magnitude < MaxVelocity || _rBody.velocity.x<0)
         {
             _rBody.gravityScale = Configs.Gravity;
@@ -105,22 +143,6 @@ public class PlayerController : CharacterController
             if (_rBody.drag < 2.5) _rBody.drag += .1f;
         }
 
-        if (jump && isJump && enterColl)
-        {
-            isJump = false;
-            _rBody.AddForce(
-                Vector2.up*
-                (Configs.JumpPower *(playerDirectionOnSurface.y+1)),
-                ForceMode2D.Impulse);
-
-            jump = false;
-            holdTime = 0;
-            enterColl = false;
-        }
-    }
-
-    private void FixedUpdate()
-    {
 
     }
 
