@@ -87,15 +87,19 @@ public class PlayerController : CharacterController
             forceUpdate = false;
             isJump = false;
             if (playerDirectionOnSurface.y > 0)
-                _rBody.AddForce(
-                    Rotate(sNormal,-45)*
-                    (Configs.JumpPower * (1+Math.Min(holdTime,0.75f))),
+            {
+                Debug.Log(-(playerDirectionOnSurface.y * 60));
+                    _rBody.AddForce(
+                    Rotate(sNormal, -(1+((float)Math.Pow(playerDirectionOnSurface.y,2)))*45) *
+                    (Configs.JumpPower *(2-((float)Math.Pow(playerDirectionOnSurface.y,2))) *(1 + Math.Min(holdTime, 0.75f))),
                     ForceMode2D.Impulse);
+                    _rBody.gravityScale = Configs.Gravity + playerDirectionOnSurface.y-1;
+                }
             else
             {
                 _rBody.AddForce(
-                    Rotate(sNormal,12)*
-                    (Configs.JumpPower * (1+Math.Min(holdTime,0.75f))),
+                    Rotate(sNormal, 1+(playerDirectionOnSurface.y*60)) *
+                    (Configs.JumpPower *(1+Math.Abs(playerDirectionOnSurface.y)) * (1 + Math.Min(holdTime, 0.5f))),
                     ForceMode2D.Impulse);
             }
             // we may want to use the abs of playerDirectionOnSurface...
@@ -121,9 +125,10 @@ public class PlayerController : CharacterController
     {
         if (forceUpdate)
         {
+            //Debug.Log(playerDirectionOnSurface);
             if (_rBody.velocity.magnitude < this.MaxVelocity)
             {
-                if (playerDirectionOnSurface.y > 0)
+                if (playerDirectionOnSurface.y > 0.05)
                 {
                     _rBody.gravityScale = Configs.Gravity;
                     _rBody.AddForce(
@@ -132,11 +137,22 @@ public class PlayerController : CharacterController
                 }
                 else
                 {
-                    //_rBody.gravityScale = Configs.Gravity + playerDirectionOnSurface.y-1;
-                    _rBody.AddForce(
-                        (new Vector2(playerDirectionOnSurface.x, playerDirectionOnSurface.y) *
-                         Configs.SlidingPower * (1 + playerDirectionOnSurface.y)) * Time.fixedDeltaTime,
-                        ForceMode2D.Impulse);
+                    if (playerDirectionOnSurface.y < 0.15 && playerDirectionOnSurface.y >= 0)
+                    {
+                        _rBody.gravityScale = Configs.Gravity;
+                        _rBody.AddForce(
+                            (new Vector2(0.5f,0.5f) * (Configs.SlidingPower * (1 + playerDirectionOnSurface.y))) *
+                            Time.fixedDeltaTime, ForceMode2D.Impulse);
+                    }
+                    else
+                    {
+                        _rBody.gravityScale = Configs.Gravity + playerDirectionOnSurface.y-1;
+                        _rBody.AddForce(
+                            (new Vector2(playerDirectionOnSurface.x, playerDirectionOnSurface.y) *
+                             Configs.SlidingPower * (1 + playerDirectionOnSurface.y)) * Time.fixedDeltaTime,
+                            ForceMode2D.Impulse);
+                    }
+
                 }
             }
 
@@ -147,24 +163,24 @@ public class PlayerController : CharacterController
                 _rBody.drag += .1f;
             }
 
-
-        }
-        
-        RaycastHit2D hitInfo=Physics2D.Raycast(new Vector2(this.transform.position.x,this.transform.position.y),Vector2.down,20,256);
-        if (!hitInfo.collider)
-            return;
+            RaycastHit2D hitInfo=Physics2D.Raycast(new Vector2(this.transform.position.x,this.transform.position.y),Vector2.down,20,256);
+            if (!hitInfo.collider)
+                return;
    
-        if (hitInfo.distance>3)
-        {
-            _rBody.AddForce(Rotate(Vector2.down,10)*forceDown,ForceMode2D.Impulse);
-            forceDown += 0.1f;
-            //Debug.Log(hitInfo.distance);
+            if (hitInfo.distance>3)
+            {
+                _rBody.AddForce(Rotate(Vector2.down,10)*forceDown,ForceMode2D.Impulse);
+                forceDown += 0.1f;
+                //Debug.Log(hitInfo.distance);
+            }
+            else
+            {
+                forceDown = 3;
+            }
+            forceUpdate = false;
         }
-        else
-        {
-            forceDown = 3;
-        } 
         
+
         //Gizmos.DrawLine(new Vector2(this.transform.position.x,this.transform.position.y),hitInfo.point);
         
 
