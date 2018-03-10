@@ -74,7 +74,7 @@ public class PlayerController : CharacterController
 
     public void Update()
     {
-        //Vector2.ClampMagnitude(_rBody.velocity, 5.0f);
+        Vector2.ClampMagnitude(_rBody.velocity, 5.0f);
 
         if (Input.GetKey(KeyCode.Space))
             holdTime += Time.deltaTime * 5;
