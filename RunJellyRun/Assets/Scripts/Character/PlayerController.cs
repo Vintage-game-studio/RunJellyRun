@@ -77,7 +77,7 @@ public class PlayerController : CharacterController
         Vector2.ClampMagnitude(_rBody.velocity, 5.0f);
 
         if (Input.GetKey(KeyCode.Space))
-            holdTime += Time.deltaTime * 5;
+            holdTime += Time.fixedDeltaTime * 5;
 
         if (enterColl && Input.GetKeyUp(KeyCode.Space))
             jump = true;
@@ -89,13 +89,13 @@ public class PlayerController : CharacterController
             if (playerDirectionOnSurface.y > 0)
                 _rBody.AddForce(
                     Rotate(sNormal,-45)*
-                    (Configs.JumpPower /** (1+Math.Min(holdTime,0.5f))*/),
+                    (Configs.JumpPower * (1+Math.Min(holdTime,0.75f))),
                     ForceMode2D.Impulse);
             else
             {
                 _rBody.AddForce(
                     Rotate(sNormal,12)*
-                    (Configs.JumpPower /** (1+Math.Min(holdTime,0.5f))*/),
+                    (Configs.JumpPower * (1+Math.Min(holdTime,0.75f))),
                     ForceMode2D.Impulse);
             }
             // we may want to use the abs of playerDirectionOnSurface...
@@ -158,7 +158,7 @@ public class PlayerController : CharacterController
         {
             _rBody.AddForce(Rotate(Vector2.down,10)*forceDown,ForceMode2D.Impulse);
             forceDown += 0.1f;
-            Debug.Log(hitInfo.distance);
+            //Debug.Log(hitInfo.distance);
         }
         else
         {

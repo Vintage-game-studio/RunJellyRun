@@ -15,12 +15,12 @@ public class Killer : MonoBehaviour {
 	    PlayerController player = collision.gameObject.GetComponent<PlayerController>();
 	    if (player != null)
 	    {
-/*	        player.Kill();
+	        player.Kill();
 		    player.ResetPos();
 	        //Destroy (collision.gameObject);
 	        collision.gameObject.SetActive(false);
 	        //Spawner.SpawnerInstance.SpawnPlayer ();
-	        KillEvent.Invoke();*/
+	        KillEvent.Invoke();
 	    }
 	}
 	// Update is called once per frame
