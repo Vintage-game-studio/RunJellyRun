@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Runtime.Remoting.Messaging;
 
 [Serializable]
 public class PlayerController : CharacterController
@@ -20,9 +21,10 @@ public class PlayerController : CharacterController
     private float lastDis;
     private Vector2 lastContact;
     private Vector2 lastPos;
+    private float forceDown = 2;
     
     public readonly double MaxSlopeAngle = 100;
-    public readonly double MaxVelocity = 5;
+    public readonly double MaxVelocity=6;
 
     void Start()
     {
@@ -38,19 +40,19 @@ public class PlayerController : CharacterController
     }
     private void OnCollisionEnter2D(Collision2D collisionInfo)
     {
+        if (playerDirectionOnSurface.y>0)
+        {
+            _rBody.gravityScale = Configs.Gravity;
+        }
         isJump = true;
         enterColl = true;
-        // isJump = true;
         _collisionInfo = collisionInfo;
         if (collisionInfo.contacts.Length==0) return;
         sNormal = collisionInfo.contacts[0].normal;
         lastContact = collisionInfo.contacts[0].point;
         Vector3 sVerNormal;
-        //if (sNormal.x<0) return;
         sVerNormal = Quaternion.AngleAxis(-90, Vector3.forward) * new Vector3(sNormal.x,sNormal.y,0);
         playerDirectionOnSurface = sVerNormal;
-        //Debug.Log(playerDirectionOnSurface);
-        //angle = Vector3.Angle(sNormal, Vector3.up);
         angle = Vector2.Angle(sNormal, Vector2.up);
     }
 
@@ -63,10 +65,8 @@ public class PlayerController : CharacterController
         sNormal = collisionInfo.contacts[0].normal;
         Vector3 sVerNormal;
         //if (sNormal.x<0) return;
-           sVerNormal = Quaternion.AngleAxis(-90, Vector3.forward) * new Vector3(sNormal.x,sNormal.y,0);
+           sVerNormal = Quaternion.AngleAxis(-90, Vector3.forward) * new Vector3(sNormal.x,sNormal.y,0);   
         playerDirectionOnSurface = sVerNormal;
-        //Debug.Log(playerDirectionOnSurface);
-        //angle = Vector3.Angle(sNormal, Vector3.up);
         angle = Vector2.Angle(sNormal, Vector2.up);
 
     }
@@ -74,6 +74,8 @@ public class PlayerController : CharacterController
 
     public void Update()
     {
+        //Vector2.ClampMagnitude(_rBody.velocity, 5.0f);
+
         if (Input.GetKey(KeyCode.Space))
             holdTime += Time.deltaTime * 5;
 
@@ -82,67 +84,89 @@ public class PlayerController : CharacterController
         
         if (jump && isJump && enterColl)
         {
+            forceUpdate = false;
             isJump = false;
-            _rBody.AddForce(
-                new Vector2(0.5f,1)*
-                (Configs.JumpPower * (1+Math.Min(holdTime,0.5f))*(playerDirectionOnSurface.y+1)),
-                ForceMode2D.Impulse);
-
+            if (playerDirectionOnSurface.y > 0)
+                _rBody.AddForce(
+                    Rotate(sNormal,-45)*
+                    (Configs.JumpPower /** (1+Math.Min(holdTime,0.5f))*/),
+                    ForceMode2D.Impulse);
+            else
+            {
+                _rBody.AddForce(
+                    Rotate(sNormal,12)*
+                    (Configs.JumpPower /** (1+Math.Min(holdTime,0.5f))*/),
+                    ForceMode2D.Impulse);
+            }
+            // we may want to use the abs of playerDirectionOnSurface...
+            
             jump = false;
             holdTime = 0;
             enterColl = false;
         }
-        
+       
+        if (playerDirectionOnSurface.y<0 && _rBody.velocity.magnitude>MaxVelocity && _rBody.gravityScale>1)
+        {
+            _rBody.gravityScale -= 0.2f;
+        }
+        else
+        {
+            if (_rBody.gravityScale<Configs.Gravity)
+            _rBody.gravityScale += 0.5f;
+        }
+     
     }
 
     private void FixedUpdate()
     {
-        if (!forceUpdate) return;
-
-        if (lastPos == lastContact)
-            this.transform.Translate(0.1f, 0.1f, 0);
-
-        float dis = Vector2.Distance(lastContact, this.transform.position);
-        Vector2 currentPos = new Vector2(this.transform.position.x, this.transform.position.y);
-        
-        if (lastContact != null && dis > 12 && Vector2.Distance(currentPos,lastPos)>0.5)
-            this.transform.position = lastPos;
-        else
-            lastPos = this.transform.position;
-        
-        if (_rBody.velocity.magnitude < MaxVelocity || _rBody.velocity.x<0)
+        if (forceUpdate)
         {
-            _rBody.gravityScale = Configs.Gravity;
-            _rBody.drag = 0;
-
-            if (isJump)
-                if (playerDirectionOnSurface.x>0)
-                    _rBody.AddForce(
-                        (playerDirectionOnSurface * (Configs.SlidingPower)) * Time.deltaTime,
-                        ForceMode2D.Impulse);
-                else
-                {                  
-                    _rBody.AddForce(
-                        (new Vector2(Math.Max(-playerDirectionOnSurface.x,0),playerDirectionOnSurface.y) * (-Configs.SlidingPower)) * 20 *Time.deltaTime,
-                        ForceMode2D.Impulse);
-                }         
-            else
-                _rBody.AddForce(
-                    (new Vector2(1, 0) * (Configs.SlidingPower)) * Time.deltaTime,
-                    ForceMode2D.Impulse);
-
-            if (_rBody.velocity.x<0.01)
+            if (_rBody.velocity.magnitude < this.MaxVelocity)
             {
-                Debug.Log("_rBody.velocity.x<0.1");
-                this.transform.Translate(10*Time.deltaTime,0,0);
+                if (playerDirectionOnSurface.y > 0)
+                {
+                    _rBody.gravityScale = Configs.Gravity;
+                    _rBody.AddForce(
+                        (playerDirectionOnSurface * (Configs.SlidingPower * (1 + playerDirectionOnSurface.y))) *
+                        Time.fixedDeltaTime, ForceMode2D.Impulse);
+                }
+                else
+                {
+                    //_rBody.gravityScale = Configs.Gravity + playerDirectionOnSurface.y-1;
+                    _rBody.AddForce(
+                        (new Vector2(playerDirectionOnSurface.x, playerDirectionOnSurface.y) *
+                         Configs.SlidingPower * (1 + playerDirectionOnSurface.y)) * Time.fixedDeltaTime,
+                        ForceMode2D.Impulse);
+                }
             }
+
+
+            if (_rBody.drag < 2.5)
+            {
+                Debug.Log("Drag Manipulation...");
+                _rBody.drag += .1f;
+            }
+
+
+        }
+        
+        RaycastHit2D hitInfo=Physics2D.Raycast(new Vector2(this.transform.position.x,this.transform.position.y),Vector2.down,20,256);
+        if (!hitInfo.collider)
+            return;
+   
+        if (hitInfo.distance>3)
+        {
+            _rBody.AddForce(Rotate(Vector2.down,10)*forceDown,ForceMode2D.Impulse);
+            forceDown += 0.1f;
+            Debug.Log(hitInfo.distance);
         }
         else
         {
-            if (_rBody.gravityScale > 2) _rBody.gravityScale -= 0.03f;
-            if (_rBody.drag < 2.5) _rBody.drag += .1f;
-        }
-
+            forceDown = 3;
+        } 
+        
+        //Gizmos.DrawLine(new Vector2(this.transform.position.x,this.transform.position.y),hitInfo.point);
+        
 
     }
 
@@ -155,6 +179,11 @@ public class PlayerController : CharacterController
     Vector2 Rotate(Vector2 aPoint, float aDegree)
     {
         return Quaternion.Euler(0,0,aDegree) * aPoint;
+    }
+
+    void OnDrawGizmos()
+    {
+
     }
 }
 
