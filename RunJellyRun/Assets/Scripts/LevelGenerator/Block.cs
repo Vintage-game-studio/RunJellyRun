@@ -51,7 +51,8 @@ public class Block : MonoBehaviour
 
         if (noCollider)
         {
-            newBlock.transform.GetChild(1).GetComponent<BoxCollider2D>().size=new Vector2(0.5f,1);
+            newBlock.transform.GetChild(1).GetComponent<BoxCollider2D>().size=new Vector2(0.9f,1f);
+            newBlock.transform.GetChild(1).gameObject.layer = 0;
         }
         
         return newBlock;

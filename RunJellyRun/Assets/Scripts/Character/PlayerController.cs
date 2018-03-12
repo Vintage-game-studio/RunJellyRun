@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Runtime.Remoting.Messaging;
+using UnityEngine.Assertions.Must;
 
 [Serializable]
 public class PlayerController : CharacterController
@@ -22,6 +23,8 @@ public class PlayerController : CharacterController
     private Vector2 lastContact;
     private Vector2 lastPos;
     private float forceDown = 2;
+    private RaycastHit2D hitInfo;
+    private Vector2 lastG;
     
     public readonly double MaxSlopeAngle = 100;
     public readonly double MaxVelocity=6;
@@ -54,6 +57,7 @@ public class PlayerController : CharacterController
         sVerNormal = Quaternion.AngleAxis(-90, Vector3.forward) * new Vector3(sNormal.x,sNormal.y,0);
         playerDirectionOnSurface = sVerNormal;
         angle = Vector2.Angle(sNormal, Vector2.up);
+        Physics2D.gravity=Vector2.down;
     }
 
     void OnCollisionStay2D(Collision2D collisionInfo)
@@ -75,6 +79,8 @@ public class PlayerController : CharacterController
     public void Update()
     {
         Vector2.ClampMagnitude(_rBody.velocity, 5.0f);
+        //Debug.Log(sNormal);
+      
 
         if (Input.GetKey(KeyCode.Space))
             holdTime += Time.fixedDeltaTime * 5;
@@ -84,13 +90,20 @@ public class PlayerController : CharacterController
         
         if (jump && isJump && enterColl)
         {
+            //Physics2D.gravity = new Vector2(0,sNormal.y-1) * -4;
             forceUpdate = false;
             isJump = false;
-            if (playerDirectionOnSurface.y > 0)
+            
+            _rBody.AddForce(
+                Rotate(sNormal, -45) *
+                    (Configs.JumpPower *(2-((float)Math.Pow(playerDirectionOnSurface.y,2))) *(1 + Math.Min(holdTime, 0.75f))),
+                    ForceMode2D.Impulse);
+                    
+/*            if (playerDirectionOnSurface.y > 0)
             {
                 Debug.Log(-(playerDirectionOnSurface.y * 60));
                     _rBody.AddForce(
-                    Rotate(sNormal, -(1+((float)Math.Pow(playerDirectionOnSurface.y,2)))*45) *
+                    Rotate(sNormal, /*-(1+((float)Math.Pow(playerDirectionOnSurface.y,2)))*#1#45) *
                     (Configs.JumpPower *(2-((float)Math.Pow(playerDirectionOnSurface.y,2))) *(1 + Math.Min(holdTime, 0.75f))),
                     ForceMode2D.Impulse);
                     _rBody.gravityScale = Configs.Gravity + playerDirectionOnSurface.y-1;
@@ -101,7 +114,7 @@ public class PlayerController : CharacterController
                     Rotate(sNormal, 1+(playerDirectionOnSurface.y*60)) *
                     (Configs.JumpPower *(1+Math.Abs(playerDirectionOnSurface.y)) * (1 + Math.Min(holdTime, 0.5f))),
                     ForceMode2D.Impulse);
-            }
+            }*/
             // we may want to use the abs of playerDirectionOnSurface...
             
             jump = false;
@@ -118,17 +131,45 @@ public class PlayerController : CharacterController
             if (_rBody.gravityScale<Configs.Gravity)
             _rBody.gravityScale += 0.5f;
         }
+        
+        hitInfo=Physics2D.Raycast(new Vector2(this.transform.position.x,this.transform.position.y),Vector2.down,100,256);
+        if (!hitInfo.collider)
+            return;
+        if (hitInfo.distance > 5)
+        {
+            _rBody.AddForce(Rotate(Vector2.down, 10) * forceDown, ForceMode2D.Impulse);
+            forceDown += 0.1f;          
+        }
+        else
+            forceDown = 3;
+
+        if (hitInfo.point != Vector2.zero)
+        {
+            Physics2D.gravity = hitInfo.normal * -4;
+            lastG = Physics2D.gravity;
+        }
+        else
+        {
+            Physics2D.gravity = lastG;
+        }
      
     }
 
     private void FixedUpdate()
     {
+       
+
+        
         if (forceUpdate)
         {
             //Debug.Log(playerDirectionOnSurface);
             if (_rBody.velocity.magnitude < this.MaxVelocity)
             {
-                if (playerDirectionOnSurface.y > 0.05)
+                _rBody.AddForce(
+                    (playerDirectionOnSurface * (Configs.SlidingPower)) *
+                    Time.fixedDeltaTime, ForceMode2D.Impulse);
+                
+/*                if (playerDirectionOnSurface.y > 0.05)
                 {
                     _rBody.gravityScale = Configs.Gravity;
                     _rBody.AddForce(
@@ -153,36 +194,21 @@ public class PlayerController : CharacterController
                             ForceMode2D.Impulse);
                     }
 
-                }
+                }*/
             }
 
 
             if (_rBody.drag < 2.5)
             {
-                Debug.Log("Drag Manipulation...");
                 _rBody.drag += .1f;
             }
 
-            RaycastHit2D hitInfo=Physics2D.Raycast(new Vector2(this.transform.position.x,this.transform.position.y),Vector2.down,20,256);
-            if (!hitInfo.collider)
-                return;
-   
-            if (hitInfo.distance>3)
-            {
-                _rBody.AddForce(Rotate(Vector2.down,10)*forceDown,ForceMode2D.Impulse);
-                forceDown += 0.1f;
-                //Debug.Log(hitInfo.distance);
-            }
-            else
-            {
-                forceDown = 3;
-            }
             forceUpdate = false;
         }
-        
-
-        //Gizmos.DrawLine(new Vector2(this.transform.position.x,this.transform.position.y),hitInfo.point);
-        
+        else
+        {
+            
+        }     
 
     }
 
@@ -199,7 +225,8 @@ public class PlayerController : CharacterController
 
     void OnDrawGizmos()
     {
-
+        Gizmos.DrawRay(hitInfo.point,lastG);
+        //Debug.Log(Physics2D.gravity);
     }
 }
 

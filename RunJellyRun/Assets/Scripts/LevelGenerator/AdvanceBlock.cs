@@ -44,7 +44,7 @@ public class AdvanceBlock : Block
     private void CreateBlock(string command)
     {
         List<string> param = command.Split(' ').Select(p => p.Trim()).Where(p => p.Length > 0).ToList();
-
+        
         Block newBlock = GetBlock(param[0]);
 
         int length = 1;
