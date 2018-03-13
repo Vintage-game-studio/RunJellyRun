@@ -162,7 +162,7 @@ public class PlayerController : CharacterController
             }
             else
             {
-                Physics2D.gravity = new Vector2(Math.Abs(hitInfo.normal.x),-Math.Abs(hitInfo.normal.y)) * 4;
+                Physics2D.gravity = new Vector2(Math.Abs(hitInfo.normal.x),-Math.Abs(hitInfo.normal.y)) * 4*(hitInfo.normal.y+1);
                 lastG = Physics2D.gravity;
             }
         }
