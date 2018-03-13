@@ -57,7 +57,7 @@ public class PlayerController : CharacterController
         sVerNormal = Quaternion.AngleAxis(-90, Vector3.forward) * new Vector3(sNormal.x,sNormal.y,0);
         playerDirectionOnSurface = sVerNormal;
         angle = Vector2.Angle(sNormal, Vector2.up);
-        Physics2D.gravity=Vector2.down;
+        Physics2D.gravity=Vector2.down*-4;
     }
 
     void OnCollisionStay2D(Collision2D collisionInfo)
@@ -131,10 +131,19 @@ public class PlayerController : CharacterController
             if (_rBody.gravityScale<Configs.Gravity)
             _rBody.gravityScale += 0.5f;
         }
-        
-        hitInfo=Physics2D.Raycast(new Vector2(this.transform.position.x,this.transform.position.y),Vector2.down,100,256);
+
+        if (lastG==Vector2.zero)
+        hitInfo=Physics2D.Raycast(new Vector2(this.transform.position.x,this.transform.position.y),Vector2.down,50,256);
+        else
+        {
+            hitInfo = Physics2D.Raycast(new Vector2(this.transform.position.x, this.transform.position.y), lastG, 50, 256);
+        }
         if (!hitInfo.collider)
+        {
+            Physics2D.gravity = lastG;
             return;
+        }
+
         if (hitInfo.distance > 5)
         {
             _rBody.AddForce(Rotate(Vector2.down, 10) * forceDown, ForceMode2D.Impulse);
@@ -143,10 +152,19 @@ public class PlayerController : CharacterController
         else
             forceDown = 3;
 
-        if (hitInfo.point != Vector2.zero)
+        if (hitInfo.point != Vector2.zero )
         {
-            Physics2D.gravity = hitInfo.normal * -4;
-            lastG = Physics2D.gravity;
+            if ( lastG!=Vector2.zero && Math.Abs(Vector2.Dot(lastG,hitInfo.normal)) < 0.01)
+            {
+                Vector3 crossVector =Vector3.Cross(new Vector3(0, 0, 1), new Vector3(hitInfo.normal.x, hitInfo.normal.y, 0));
+                Vector2 gravityVec= new Vector2(Math.Abs(crossVector.x),-Math.Abs(crossVector.y));
+                Physics2D.gravity = gravityVec*4;         
+            }
+            else
+            {
+                Physics2D.gravity = new Vector2(Math.Abs(hitInfo.normal.x),-Math.Abs(hitInfo.normal.y)) * 4;
+                lastG = Physics2D.gravity;
+            }
         }
         else
         {
@@ -157,9 +175,9 @@ public class PlayerController : CharacterController
 
     private void FixedUpdate()
     {
-       
 
-        
+        Debug.Log(Physics2D.gravity);
+
         if (forceUpdate)
         {
             //Debug.Log(playerDirectionOnSurface);
@@ -225,8 +243,7 @@ public class PlayerController : CharacterController
 
     void OnDrawGizmos()
     {
-        Gizmos.DrawRay(hitInfo.point,lastG);
-        //Debug.Log(Physics2D.gravity);
+        Gizmos.DrawRay(hitInfo.point, lastG*5);
     }
 }
 
