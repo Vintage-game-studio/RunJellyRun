@@ -79,10 +79,6 @@ public class ProjectileCalculation: MonoBehaviour
       Debug.Log(time);
     }
   }
-  Vector2 RotatePoint(Vector2 aPoint, float aDegree)
-  {
-    this.;
-  }
 
   void OnDrawGizmos() {
     Gizmos.color = Color.yellow;
