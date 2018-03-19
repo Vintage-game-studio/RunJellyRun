@@ -26,8 +26,9 @@ public class ProjectileCalculation: MonoBehaviour
     float px = InitialVelocity * Mathf.Cos(Mathf.Deg2Rad * InitialAngle) * t + this.initialPosition2D.x;
     float py = -5 * Mathf.Pow(t, 2) + InitialVelocity * Mathf.Sin(Mathf.Deg2Rad * InitialAngle) * t + this.initialPosition2D.y;
 
-    this.transform.position=new Vector3(px,py,0);
-    return RotatePoint(new Vector2(px,py),this.rotAngle );
+    //this.transform.position=new Vector3(px,py,0);
+    //return RotatePoint(new Vector2(px,py),this.rotAngle );
+    return RotatePointAroundPivot(new Vector2(px, py), this.initialPosition2D, new Vector3(0, 0, rotAngle));
     //return new Vector2(px,py);
   }
 
@@ -52,7 +53,7 @@ public class ProjectileCalculation: MonoBehaviour
       float vy = (TargetGO.transform.position.x-this.transform.position.x) / Duration;
 
       InitialVelocity = Mathf.Sqrt(Mathf.Pow(vx, 2) + Mathf.Pow(vy, 2));
-      InitialAngle = Mathf.Rad2Deg * Mathf.Acos((TargetGO.transform.position.x-this.transform.position.x) / (InitialVelocity * Duration));
+      InitialAngle = Mathf.Rad2Deg * Mathf.Acos((Vector3.Distance(TargetGO.transform.position,this.transform.position)) / (InitialVelocity * Duration));
       jump = true;
     }
   }
@@ -85,8 +86,17 @@ public class ProjectileCalculation: MonoBehaviour
     foreach (KeyValuePair<Vector3, Vector3> keyValuePair in linePairs)
     {
       Gizmos.DrawLine(keyValuePair.Key, keyValuePair.Value);
-      Gizmos.color=Color.red;
-      Gizmos.DrawSphere(keyValuePair.Value,1);
+/*      Gizmos.color=Color.red;
+      Gizmos.DrawSphere(keyValuePair.Value,1);*/
     }
+  }
+  
+  Vector2 RotatePoint(Vector2 aPoint, float aDegree)
+  {
+    return Quaternion.Euler(0,0,aDegree) * aPoint;
+  }
+  
+  public Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles) {
+    return Quaternion.Euler(angles) * (point - pivot) + pivot;
   }
 }
