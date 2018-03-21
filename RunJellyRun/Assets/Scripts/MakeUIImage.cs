@@ -7,7 +7,7 @@ class MakeUIImage : AssetPostprocessor {
 		if (assetPath.Contains("UI_Images") || assetPath.Contains("SpriteFonts") || assetPath.Contains("SpriteAtlases")) {
 			Debug.Log ("Importing new GUI Image!");
 			TextureImporter myTextureImporter  = (TextureImporter)assetImporter;
-			myTextureImporter.textureType = TextureImporterType.Advanced;
+			myTextureImporter.textureType = TextureImporterType.Default;
 			myTextureImporter.textureFormat = TextureImporterFormat.ARGB32;
 			myTextureImporter.convertToNormalmap = false;
 			myTextureImporter.maxTextureSize = 2048;

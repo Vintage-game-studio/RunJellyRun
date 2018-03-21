@@ -10,7 +10,7 @@ public class ProjectileCalculation: MonoBehaviour
 
   public float InitialVelocity;
   //public Transform InitialTranstform3D;
-  public float InitialAngle;
+  private float InitialAngle;
   public GameObject TargetGO;
   public float Duration;
 
@@ -19,17 +19,19 @@ public class ProjectileCalculation: MonoBehaviour
   private Vector2 initialPosition2D;
   private Vector2 targetPos;
   private float rotAngle;
+  private float g;
   List<KeyValuePair<Vector3,Vector3>> linePairs=new List<KeyValuePair<Vector3, Vector3>>();
   
   Vector2 GetPosition(float t)
   { 
     float px = InitialVelocity * Mathf.Cos(Mathf.Deg2Rad * InitialAngle) * t + this.initialPosition2D.x;
-    float py = -5 * Mathf.Pow(t, 2) + InitialVelocity * Mathf.Sin(Mathf.Deg2Rad * InitialAngle) * t + this.initialPosition2D.y;
+    float py = 0.5f*g * Mathf.Pow(t, 2) + InitialVelocity * Mathf.Sin(Mathf.Deg2Rad * InitialAngle) * t ;
 
     //this.transform.position=new Vector3(px,py,0);
     //return RotatePoint(new Vector2(px,py),this.rotAngle );
+
     return RotatePointAroundPivot(new Vector2(px, py), this.initialPosition2D, new Vector3(0, 0, rotAngle));
-    //return new Vector2(px,py);
+    //return new Vector2(px, py);
   }
 
   void Start()
@@ -52,8 +54,14 @@ public class ProjectileCalculation: MonoBehaviour
       float vx = ( 5 * Mathf.Pow(Duration, 2)) / Duration;
       float vy = (TargetGO.transform.position.x-this.transform.position.x) / Duration;
 
-      InitialVelocity = Mathf.Sqrt(Mathf.Pow(vx, 2) + Mathf.Pow(vy, 2));
-      InitialAngle = Mathf.Rad2Deg * Mathf.Acos((Vector3.Distance(TargetGO.transform.position,this.transform.position)) / (InitialVelocity * Duration));
+      float dis = Vector3.Distance(TargetGO.transform.position, this.transform.position);
+      InitialVelocity=(2*dis)/((float)Mathf.Sqrt(2)*Duration);
+      InitialAngle = 45;
+      g = (-2 * dis) / (Mathf.Pow(Duration, 2));
+      Debug.Log("(Vector3.Distance(TargetGO.transform.position,this.transform.position): "+(Vector3.Distance(TargetGO.transform.position,this.transform.position)));
+      Debug.Log("InitialVelocity * Duration: "+InitialVelocity * Duration);
+      //InitialAngle = Mathf.Rad2Deg * Mathf.Acos((Vector3.Distance(TargetGO.transform.position,this.transform.position)) / (InitialVelocity * Duration));
+
       jump = true;
     }
   }
