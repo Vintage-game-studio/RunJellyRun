@@ -47,8 +47,8 @@ public class ProjectileCalculation: MonoBehaviour
       time = 0;
       
       float dis = Vector3.Distance(TargetGO.transform.position, this.transform.position);
-      InitialVelocity = (2 * dis) / ((float) Mathf.Sqrt(2) * Duration);
-      g = (-2 * dis) / (Mathf.Pow(Duration, 2));
+      InitialVelocity = dis / (Mathf.Cos(this.InitialAngle *Mathf.Deg2Rad) * Duration);
+      g = (-2 * dis* Mathf.Tan(this.InitialAngle*Mathf.Deg2Rad)) / (Mathf.Pow(Duration, 2));
       jump = true;
     }
   }
@@ -61,7 +61,7 @@ public class ProjectileCalculation: MonoBehaviour
           Vector2.Distance(transform.position, TargetGO.transform.position) < 0.01)
       {
         jump = false;
-        linePairs.Clear();
+        //linePairs.Clear();
         return;
       }
 
