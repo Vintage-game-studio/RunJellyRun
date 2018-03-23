@@ -21,13 +21,19 @@ public class ProjectileCalculation: MonoBehaviour
   private float rotAngle;
   private float g;
   List<KeyValuePair<Vector3,Vector3>> linePairs=new List<KeyValuePair<Vector3, Vector3>>();
+  private float deltaX;
   
   Vector2 GetPosition(float t)
   { 
     float px = InitialVelocity * Mathf.Cos(Mathf.Deg2Rad * InitialAngle) * t + this.initialPosition2D.x;
     float py = 0.5f*g * Mathf.Pow(t, 2) + InitialVelocity * Mathf.Sin(Mathf.Deg2Rad * InitialAngle) * t +this.initialPosition2D.y;
 
-   return RotatePointAroundPivot(new Vector2(px, py), this.initialPosition2D, new Vector3(0, 0, rotAngle));
+    if (Math.Abs(px - deltaX) < Time.fixedDeltaTime)
+    {
+      //TODO:
+    }
+    
+    return RotatePointAroundPivot(new Vector2(px, py), this.initialPosition2D, new Vector3(0, 0, rotAngle));
   }
 
   void Start()
@@ -45,10 +51,10 @@ public class ProjectileCalculation: MonoBehaviour
       Vector2 diffVec2 = new Vector2(TargetGO.transform.position.x,TargetGO.transform.position.y) - this.initialPosition2D;
       this.rotAngle = Mathf.Acos(Vector2.Dot(diffVec2.normalized, Vector2.right))*Mathf.Rad2Deg;
       time = 0;
-      
-      float dis = Vector3.Distance(TargetGO.transform.position, this.transform.position);
-      InitialVelocity = dis / (Mathf.Cos(this.InitialAngle *Mathf.Deg2Rad) * Duration);
-      g = (-2 * dis* Mathf.Tan(this.InitialAngle*Mathf.Deg2Rad)) / (Mathf.Pow(Duration, 2));
+
+      deltaX = Vector3.Distance(TargetGO.transform.position, this.transform.position);
+      InitialVelocity = deltaX / (Mathf.Cos(this.InitialAngle *Mathf.Deg2Rad) * Duration);
+      g = (-2 * deltaX* Mathf.Tan(this.InitialAngle*Mathf.Deg2Rad)) / (Mathf.Pow(Duration, 2));
       jump = true;
     }
   }
