@@ -24,10 +24,12 @@ public class ProjectileDrawer : Editor
         _projectileCalculation = (ProjectileCalculation) target;
         
         DrawDefaultInspector();
-        Rect layoutRectangle = GUILayoutUtility.GetRect(10, 10000, 200, 200);
+
+        Rect layoutRectangle = GUILayoutUtility.GetRect(10, 10000, EditorGUIUtility.currentViewWidth, EditorGUIUtility.currentViewWidth);
+        
         if (GUILayout.Button("Draw Projectile"))
         {
-            linePairs = _projectileCalculation.GetProjectilePoints(layoutRectangle.width,layoutRectangle.height);
+            linePairs = _projectileCalculation.GetProjectilePoints();
             isDrawing = true;
         }
         
@@ -55,7 +57,7 @@ public class ProjectileDrawer : Editor
                 GL.Begin(GL.LINE_STRIP);   
                 foreach (Vector3 point in linePairs)
                 {
-                    GL.Vertex3(layoutRectangle.width/4+point.x, -point.y+layoutRectangle.height, point.z);
+                    GL.Vertex3(layoutRectangle.width/4+layoutRectangle.width*point.x, -point.y*layoutRectangle.height+layoutRectangle.height, point.z);
                 }
                 GL.End();                
             }

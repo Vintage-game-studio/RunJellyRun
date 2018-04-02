@@ -58,7 +58,7 @@ public class ProjectileCalculation: MonoBehaviour
 
   }
 
-  public List<Vector3> GetProjectilePoints(float width, float height)
+  public List<Vector3> GetProjectilePoints()
   {
     float timeInterval;
     List<Vector3> projectilePoints=new List<Vector3>();
@@ -83,10 +83,10 @@ public class ProjectileCalculation: MonoBehaviour
     maxHeight=  0.5f*gravity * Mathf.Pow(Duration*ratio, 2) + this.InitialVelocity * Mathf.Sin(Mathf.Deg2Rad * InitialAngle) * this.Duration*ratio +this.initialPosition2D.y;
     maxWidth= 2*dis;
     
-    while (Math.Abs(spentTime - Duration) > timeInterval && Vector2.Distance(currentPos, TargetGO.transform.position) > 0.1)
+    while (this.Duration-spentTime > 0.001 && Vector2.Distance(currentPos, TargetGO.transform.position) > 0.1)
     {
       currentPos = GetPosition(spentTime,gravity);
-      Vector2 normCurrentPos=new Vector2(width*currentPos.x/maxWidth,height*currentPos.y/maxHeight);
+      Vector2 normCurrentPos=new Vector2(currentPos.x/maxWidth,currentPos.y/maxHeight);
       Vector2 rotatedVec2= RotatePointAroundPivot(normCurrentPos, this.rotationPivot, new Vector3(0, 0, rotAngle));
       projectilePoints.Add(rotatedVec2);
       
