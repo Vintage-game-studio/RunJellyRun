@@ -11,6 +11,13 @@ public class ProjectileDrawer : Editor
     private List<Vector3> linePairs;
     private ProjectileCalculation _projectileCalculation;
     private bool isDrawing = false;
+
+    private bool enableInitialVelocity;
+    private bool enableInitialAngle;
+    private bool enableTargetPos;
+    private bool enableMaxHeight;
+    private bool enableDuration;
+    private bool enableGravity;
     
     void OnEnable()
     {
@@ -25,6 +32,8 @@ public class ProjectileDrawer : Editor
         
         DrawDefaultInspector();
 
+
+
         Rect layoutRectangle = GUILayoutUtility.GetRect(10, 10000, EditorGUIUtility.currentViewWidth, EditorGUIUtility.currentViewWidth);
         
         if (GUILayout.Button("Draw Projectile"))
@@ -32,7 +41,14 @@ public class ProjectileDrawer : Editor
             linePairs = _projectileCalculation.GetProjectilePoints();
             isDrawing = true;
         }
-        
+        GUILayout.BeginHorizontal(EditorStyles.helpBox);
+        enableDuration = EditorGUILayout.Toggle("Duration",enableDuration,new GUILayoutOption[] {});
+        if (enableDuration)
+        {
+            EditorGUILayout.TextField("TEXT");
+        }
+        GUILayout.EndHorizontal();
+
         GUILayout.BeginHorizontal(EditorStyles.helpBox);
 
         if (Event.current.type == EventType.Repaint)
