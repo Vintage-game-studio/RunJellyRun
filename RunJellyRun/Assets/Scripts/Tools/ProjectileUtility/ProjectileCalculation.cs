@@ -83,7 +83,7 @@ public class ProjectileCalculation: MonoBehaviour
     maxHeight=  0.5f*gravity * Mathf.Pow(Duration*ratio, 2) + this.InitialVelocity * Mathf.Sin(Mathf.Deg2Rad * InitialAngle) * this.Duration*ratio +this.initialPosition2D.y;
     maxWidth= 2*dis;
     
-    while (this.Duration-spentTime > 0.001 && Vector2.Distance(currentPos, TargetGO.transform.position) > 0.1)
+    while (this.Duration-overalTime > 0.000001)
     {
       currentPos = GetPosition(spentTime,gravity);
       Vector2 normCurrentPos=new Vector2(currentPos.x/maxWidth,currentPos.y/maxHeight);
@@ -102,7 +102,8 @@ public class ProjectileCalculation: MonoBehaviour
       }
       spentTime += timeInterval;
       overalTime += timeInterval;
-      Debug.Log(overalTime);
+      Debug.Log("spentTime: "+spentTime);
+      Debug.Log("overalTime: "+overalTime);
       Debug.Log("dis: "+Vector2.Distance(currentPos, TargetGO.transform.position));
     }
     return projectilePoints;
@@ -139,8 +140,7 @@ public class ProjectileCalculation: MonoBehaviour
   {
     return deltaX / (Mathf.Cos(angle *Mathf.Deg2Rad) * duration);
   }
-  
-  
+   
   void FixedUpdate()
   {
     if (jump)

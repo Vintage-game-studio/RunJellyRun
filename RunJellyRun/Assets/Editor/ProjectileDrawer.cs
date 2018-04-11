@@ -32,15 +32,14 @@ public class ProjectileDrawer : Editor
         
         DrawDefaultInspector();
 
-
-
-        Rect layoutRectangle = GUILayoutUtility.GetRect(10, 10000, EditorGUIUtility.currentViewWidth, EditorGUIUtility.currentViewWidth);
+        Rect layoutRectangle=GUILayoutUtility.GetRect(10, 0, EditorGUIUtility.currentViewWidth/2,  EditorGUIUtility.currentViewWidth/8);
         
         if (GUILayout.Button("Draw Projectile"))
         {
             linePairs = _projectileCalculation.GetProjectilePoints();
             isDrawing = true;
         }
+        
         GUILayout.BeginHorizontal(EditorStyles.helpBox);
         enableDuration = EditorGUILayout.Toggle("Duration",enableDuration,new GUILayoutOption[] {});
         if (enableDuration)
