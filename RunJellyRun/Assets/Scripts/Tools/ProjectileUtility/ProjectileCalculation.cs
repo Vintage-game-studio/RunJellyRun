@@ -80,13 +80,16 @@ public class ProjectileCalculation: MonoBehaviour
     timeInterval = this.Duration / 100f;
     float spentTime = 0;
     float overalTime=0;
-    maxHeight=  0.5f*gravity * Mathf.Pow(Duration*ratio, 2) + this.InitialVelocity * Mathf.Sin(Mathf.Deg2Rad * InitialAngle) * this.Duration*ratio +this.initialPosition2D.y;
-    maxWidth= 2*dis;
+
+    maxHeight = 0.5f * gravity * Mathf.Pow(Duration * ratio, 2) +
+                this.InitialVelocity * Mathf.Sin(Mathf.Deg2Rad * InitialAngle) * this.Duration * ratio +
+                this.initialPosition2D.y;
+    maxWidth= dis;
     
     while (this.Duration-overalTime > 0.000001)
     {
       currentPos = GetPosition(spentTime,gravity);
-      Vector2 normCurrentPos=new Vector2(currentPos.x/maxWidth,currentPos.y/maxHeight);
+      Vector2 normCurrentPos = new Vector2(currentPos.x/maxWidth,currentPos.y/maxHeight);
       Vector2 rotatedVec2= RotatePointAroundPivot(normCurrentPos, this.rotationPivot, new Vector3(0, 0, rotAngle));
       projectilePoints.Add(rotatedVec2);
       
@@ -102,6 +105,7 @@ public class ProjectileCalculation: MonoBehaviour
       }
       spentTime += timeInterval;
       overalTime += timeInterval;
+      
       Debug.Log("spentTime: "+spentTime);
       Debug.Log("overalTime: "+overalTime);
       Debug.Log("dis: "+Vector2.Distance(currentPos, TargetGO.transform.position));
