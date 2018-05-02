@@ -53,7 +53,7 @@ public class ProjectileWrapper : MonoBehaviour {
 		List<Vector2> points=new List<Vector2>();
 		if (this._initialAngle>0 && this._duration>0 && this._targetPos!=Vector2.zero)
 		{
-			Projectile.InitialAngle_duration_targetPos initialAngleDurationTargetPos = new Projectile.InitialAngle_duration_targetPos();
+			Projectile.InitialAngleDurationTargetPos initialAngleDurationTargetPos = new Projectile.InitialAngleDurationTargetPos();
 			initialAngleDurationTargetPos.Duration = this._duration;
 			initialAngleDurationTargetPos.InitAngle = this._initialAngle;
 			this._projectile = new Projectile(this.initialPos2D, 0.6f, initialAngleDurationTargetPos);

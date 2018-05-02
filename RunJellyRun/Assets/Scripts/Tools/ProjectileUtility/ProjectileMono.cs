@@ -19,7 +19,7 @@ public class ProjectileMono : MonoBehaviour
 	{
 		this.initialPos2D=new Vector2(transform.position.x,transform.position.y);
 		
-		Projectile.InitialAngle_duration_targetPos initialAngleDurationTargetPos = new Projectile.InitialAngle_duration_targetPos();
+		Projectile.InitialAngleDurationTargetPos initialAngleDurationTargetPos = new Projectile.InitialAngleDurationTargetPos();
 		initialAngleDurationTargetPos.InitAngle = this.InitialAngle;
 		initialAngleDurationTargetPos.Duration = this.Duration;
 		initialAngleDurationTargetPos.TargetTransform = this.TargetPos;
