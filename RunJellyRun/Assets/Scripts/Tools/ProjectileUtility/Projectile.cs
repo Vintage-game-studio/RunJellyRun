@@ -7,16 +7,27 @@ using UnityEngine;
 public class Projectile
 {	
 	private readonly float TIME_DIVISION = 100f;
-	
-	private float _initialVelocity;
-	private float _gravity;
-	private float _height;
-	private float _initialAngle;
-	private float _duration;
-	private float _ratio;
 
-	private Vector2 _initialPos2D;
-	private readonly Vector2 targetPos2D;
+	private float height;
+	private float duration;
+	private float ratio;
+
+	private Vector2 targetPos2D;
+
+	private float gravity1;
+	private float gravity2;
+
+	private float initialVelocity1;
+	private float initialVelocity2;
+
+	private float initialAngle1;
+	private float initialAngle2;
+
+	private Vector2 initialPos2D1;
+	private Vector2 initialPos2D2;
+	private float rotationAngle;
+	private Vector2 rotationPivot;
+	private float totalDistance;
 
 	public struct GravityDurationTargetPos
 	{
@@ -67,55 +78,81 @@ public class Projectile
 	
 	public Projectile(Vector2 initialPos2D, Vector2 targetPos2D, float ratio,InitialVelocityDurationTargetPos initialVelocityDurationTargetPos)
 	{
-		this._initialVelocity = initialVelocityDurationTargetPos.InitialVelocity;
-		this._duration = initialVelocityDurationTargetPos.Duration;
-		this._ratio = ratio;
+		this.initialVelocity1 = initialVelocityDurationTargetPos.InitialVelocity;
+		this.duration = initialVelocityDurationTargetPos.Duration;
+		this.ratio = ratio;
 
-		this._initialPos2D = initialPos2D;
+		this.initialPos2D2 = initialPos2D;
 		this.targetPos2D=targetPos2D;		
 	}
 
 	public Projectile(Vector2 initialPos2D, Vector2 targetPos2D,float ratio,HeightDurationTargetPos heightDurationTargetPos)
 	{
-		this._height = heightDurationTargetPos.Height;
-		this._duration = heightDurationTargetPos.Duration;
-		this._ratio = ratio;
+		this.height = heightDurationTargetPos.Height;
+		this.duration = heightDurationTargetPos.Duration;
+		this.ratio = ratio;
 		
-		this._initialPos2D=initialPos2D;
+		this.initialPos2D1=initialPos2D;
 		this.targetPos2D=targetPos2D;	
 	}
 
 	public Projectile(Vector2 initialPos2D, Vector2 targetPos2D,float ratio,GravityDurationTargetPos gravityDurationTargetPos)
 	{
-		this._gravity = gravityDurationTargetPos.Gravity;
-		this._duration = gravityDurationTargetPos.Duration;
-		this._ratio = ratio;
+		this.gravity1 = gravityDurationTargetPos.Gravity;
+		this.duration = gravityDurationTargetPos.Duration;
+		this.ratio = ratio;
 		
-		this._initialPos2D=initialPos2D;
+		this.initialPos2D1=initialPos2D;
 		this.targetPos2D=targetPos2D;	
 	}
 	
 	public Projectile(Vector2 initialPos,float ratio,InitialAngleGravityInitVelocity initialAngleGravityInitVelocity)
 	{		
-		this._initialVelocity = initialAngleGravityInitVelocity.InitVelocity;
-		this._gravity = initialAngleGravityInitVelocity.Gravity;
-		this._initialAngle = initialAngleGravityInitVelocity.InitAngle;
-		this._ratio = ratio;
+		this.initialVelocity1 = initialAngleGravityInitVelocity.InitVelocity;
+		this.gravity1 = initialAngleGravityInitVelocity.Gravity;
+		this.initialAngle1 = initialAngleGravityInitVelocity.InitAngle;
+		this.ratio = ratio;
 
-		this._initialPos2D = initialPos;
+		this.initialPos2D1 = initialPos;
 	}
 
-	public Projectile(Vector2 initialPos2D,float ratio,InitialAngleDurationTargetPos initialAngleDurationTargetPos)
+	public Projectile(Vector2 initialPos2D, float ratio, InitialAngleDurationTargetPos initialAngleDurationTargetPos)
 	{
-		this._initialAngle = initialAngleDurationTargetPos.InitAngle;
-		this._duration = initialAngleDurationTargetPos.Duration;
+		this.duration = initialAngleDurationTargetPos.Duration;
+
 		Vector3 targetPos = initialAngleDurationTargetPos.TargetTransform.position;
-		this.targetPos2D=new Vector2(targetPos.x,targetPos.y);		
-		this._ratio = ratio;
-		
-		this._initialPos2D=initialPos2D;
+		this.targetPos2D = new Vector2(targetPos.x, targetPos.y);
+		this.ratio = ratio;
+
+		this.initialAngle1 = initialAngleDurationTargetPos.InitAngle;
+
+		this.initialPos2D1 = initialPos2D;
+		this.initialPos2D2 = initialPos2D;
+
+		this.totalDistance = Vector2.Distance(this.targetPos2D, initialPos2D1);
+		float projectileDistance1 = (totalDistance * this.ratio) * 2;
+		float projectileDistance2 = (totalDistance - projectileDistance1 / 2) * 2;
+		this.initialPos2D2.x= ((projectileDistance1 / 2) - projectileDistance2 / 2);
+
+		float duration1 = this.duration * this.ratio * 2;
+		float duration2 = this.duration * (1 - this.ratio) * 2;
+
+		this.gravity1 = CalculateGravity(projectileDistance1, duration1, this.initialAngle1);
+		this.initialVelocity1 = CalculateVelocity(projectileDistance1, duration1, this.initialAngle1);
+
+		this.height = 0.5f * this.gravity1 * Mathf.Pow(duration1 / 2, 2) +
+		               this.initialVelocity1 * Mathf.Sin(Mathf.Deg2Rad * this.initialAngle1) * duration1/2+
+		               this.initialPos2D1.y;
+
+		Vector2 midPos = GetPosition(duration1/2, this.initialVelocity1, this.initialAngle1, this.initialPos2D1, this.gravity1);
+		this.gravity2 = -8 * (midPos.y - initialPos2D2.y) / (float)Mathf.Pow(duration2, 2);
+		this.initialAngle2= Mathf.Rad2Deg * Mathf.Atan(4 * (midPos.y - initialPos2D2.y) / projectileDistance2);
+		this.initialVelocity2 = (-gravity2 * duration2) / (2 * Mathf.Sin(Mathf.Deg2Rad * initialAngle2));
+
+		this.rotationAngle = GetRotateAngle(this.initialPos2D1, this.targetPos2D);
+		this.rotationPivot = this.initialPos2D1;
 	}
-	
+
 	float GetRotateAngle(Vector2 initialPos2D, Vector2 targetPos2D)
 	{
 		Vector2 diffVec2 = targetPos2D - initialPos2D;
@@ -131,81 +168,65 @@ public class Projectile
 	{
 		return deltaX / (Mathf.Cos(angle *Mathf.Deg2Rad) * duration);
 	}
-	
-	public Vector2 GetPosition(float time)
+
+	private Vector2 GetPosition(float time, float initialVelocity,float initialAngle, Vector2 initialPos2D, float gravity)
 	{
-		//this.paceLength = Vector2.Distance(this.targetPos2D, this.initialPos2D);
-		float px = this._initialVelocity * Mathf.Cos(Mathf.Deg2Rad * this._initialAngle) * time + this._initialPos2D.x;
-		float py = 0.5f * this._gravity * Mathf.Pow(time, 2) +
-		           this._initialVelocity * Mathf.Sin(Mathf.Deg2Rad * this._initialAngle) * time + this._initialPos2D.y;
+		float px = initialVelocity * Mathf.Cos(Mathf.Deg2Rad * initialAngle) * time + initialPos2D.x;
+		float py = 0.5f * gravity * Mathf.Pow(time, 2) +
+		           initialVelocity * Mathf.Sin(Mathf.Deg2Rad * initialAngle) * time + initialPos2D.y;
 
 		return new Vector2(px, py);
 	}
 
-	public List<ProjectilePoint> GetProjectileSamples(bool normalized=false)
+	public List<ProjectilePoint> GetProjectileSamples(bool normalized = false)
 	{
-		float totalDistance = Vector2.Distance(this.targetPos2D, this._initialPos2D);
-		float firstProjectileDistance = (totalDistance * _ratio)*2;
-		float secondProjectileDistance = (totalDistance - firstProjectileDistance/2)*2;
-
-		float firstDuration = this._duration * _ratio * 2;
-		float secondDuration = this._duration * (1 - _ratio) * 2;
-		
-		if (this._gravity == 0)
-			this._gravity = CalculateGravity(firstProjectileDistance, firstDuration, this._initialAngle);
-
-		if (this._initialVelocity == 0)
-			this._initialVelocity = CalculateVelocity(firstProjectileDistance, firstDuration, this._initialAngle);
-
-		this._height = 0.5f * _gravity * Mathf.Pow(firstDuration/2, 2) +
-		              this._initialVelocity * Mathf.Sin(Mathf.Deg2Rad * this._initialAngle) * this._duration * _ratio +
-		              this._initialPos2D.y;
-
 		float currentProjectileSpentTime = 0;
-		float overalTime=0;
-		
-		float rotationAngle = GetRotateAngle(this._initialPos2D, this.targetPos2D);
+		float overalTime = 0;
+
+		float timeInterval = this.duration / TIME_DIVISION;
+
 		List<ProjectilePoint> projectilePoints = new List<ProjectilePoint>();
-		Vector2 rotationPivot = this._initialPos2D;
-		
-		float timeInterval= this._duration / TIME_DIVISION;
-		
-		while (this._duration - overalTime > 0.0001)
+
+		while (Math.Abs(overalTime - this.duration * ratio) > 0.001)
 		{
-			Vector3 currentPos = GetPosition(currentProjectileSpentTime);			
-			Vector2 rotatedVec2;		
-			
-			if (normalized)
-			{
-				Vector2 normCurrentPos=new Vector2(currentPos.x/totalDistance,currentPos.y/this._height);
-				rotatedVec2=RotatePointAroundPivot(normCurrentPos,rotationPivot, new Vector3(0, 0, rotationAngle));
-			}
-			else
-			{
-				rotatedVec2= RotatePointAroundPivot(currentPos,rotationPivot, new Vector3(0, 0, rotationAngle));
-			}
-			projectilePoints.Add(new ProjectilePoint(overalTime,rotatedVec2));
-			
-			if (Math.Abs(overalTime - this._duration * _ratio) < 0.01)
-			{
-				this._initialPos2D.x += ((firstProjectileDistance / 2) - secondProjectileDistance/2);   
-				_gravity = -8 * (currentPos.y-this._initialPos2D.y) / (float)Mathf.Pow(secondDuration, 2);
-				this._initialAngle = Mathf.Rad2Deg * Mathf.Atan(4 * (currentPos.y-this._initialPos2D.y) / secondProjectileDistance);
-				this._initialVelocity = (-_gravity * secondDuration)/(2*Mathf.Sin(Mathf.Deg2Rad * this._initialAngle));
-				currentProjectileSpentTime = this._duration * (1 - _ratio);
-			}
-			
+			Vector3 currentPos = GetPosition(currentProjectileSpentTime, this.initialVelocity1, this.initialAngle1,
+				this.initialPos2D1, this.gravity1);
+
+			projectilePoints.Add(new ProjectilePoint(overalTime,
+				RotatePointAroundPivot(currentPos, rotationPivot, new Vector3(0, 0, rotationAngle))));
+
 			currentProjectileSpentTime += timeInterval;
 			overalTime += timeInterval;
-			
-			Debug.Log("spentTime: "+ currentProjectileSpentTime);
-			Debug.Log("overalTime: "+ overalTime);
-			Debug.Log("dis: "+ Vector2.Distance(currentPos, this.targetPos2D));
 		}
+
+		currentProjectileSpentTime = this.duration * (1 - ratio);
+
+		while (this.duration - overalTime > 0.00001)
+		{
+			currentProjectileSpentTime += timeInterval;
+			overalTime += timeInterval;
+
+			Vector3 currentPos = GetPosition(currentProjectileSpentTime, this.initialVelocity2, this.initialAngle2,
+				this.initialPos2D2, this.gravity2);
+
+			projectilePoints.Add(new ProjectilePoint(overalTime,
+				RotatePointAroundPivot(currentPos, rotationPivot, new Vector3(0, 0, rotationAngle))));
+
+		}
+
+		if (normalized)
+			for (var index = 0; index < projectilePoints.Count; index++)
+			{
+				ProjectilePoint pointPair = projectilePoints[index];
+				Vector2 currentPos = pointPair.Position2D;
+				Vector2 normCurrentPos = new Vector2(currentPos.x / totalDistance, currentPos.y / this.height);
+				pointPair.Position2D = RotatePointAroundPivot(normCurrentPos, rotationPivot, new Vector3(0, 0, rotationAngle));
+				projectilePoints[index] = new ProjectilePoint(pointPair.TimeStamp, pointPair.Position2D);
+			}
 
 		return projectilePoints;
 	}
-	
+
 	public Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles) {
 		return Quaternion.Euler(angles) * (point - pivot) + pivot;
 	}
