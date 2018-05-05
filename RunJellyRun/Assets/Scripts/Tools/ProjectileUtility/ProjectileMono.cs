@@ -17,21 +17,18 @@ public class ProjectileMono : MonoBehaviour
 	
 	void Start ()
 	{
-		this.initialPos2D=new Vector2(transform.position.x,transform.position.y);
+		Projectile.InitialAngleDuration initialAngleDuration = new Projectile.InitialAngleDuration();
+		initialAngleDuration.InitAngle = this.InitialAngle;
+		initialAngleDuration.Duration = this.Duration;
 		
-		Projectile.InitialAngleDurationTargetPos initialAngleDurationTargetPos = new Projectile.InitialAngleDurationTargetPos();
-		initialAngleDurationTargetPos.InitAngle = this.InitialAngle;
-		initialAngleDurationTargetPos.Duration = this.Duration;
-		initialAngleDurationTargetPos.TargetTransform = this.TargetPos;
-		
-		projectile = new Projectile(initialPos2D,0.6f,initialAngleDurationTargetPos);
-		List<Projectile.ProjectilePoint> projectilePoints = projectile.GetProjectileSamples();
-		pointsVec2 = projectilePoints.Select(s => s.Position2D).ToList();
+		projectile = new Projectile(0.6f,initialAngleDuration);
+
 	}
 
-	void Update () {
+	void FixedUpdate () {
 		
-		
+		List<Projectile.ProjectilePoint> projectilePoints = projectile.GetProjectileSamples(this.transform.position,this.TargetPos.position);
+		pointsVec2 = projectilePoints.Select(s => s.Position2D).ToList();
 	}
 
 	void OnDrawGizmos()

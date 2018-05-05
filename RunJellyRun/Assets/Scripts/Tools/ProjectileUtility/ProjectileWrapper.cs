@@ -53,11 +53,11 @@ public class ProjectileWrapper : MonoBehaviour {
 		List<Vector2> points=new List<Vector2>();
 		if (this._initialAngle>0 && this._duration>0 && this._targetPos!=Vector2.zero)
 		{
-			Projectile.InitialAngleDurationTargetPos initialAngleDurationTargetPos = new Projectile.InitialAngleDurationTargetPos();
-			initialAngleDurationTargetPos.Duration = this._duration;
-			initialAngleDurationTargetPos.InitAngle = this._initialAngle;
-			this._projectile = new Projectile(this.initialPos2D, 0.6f, initialAngleDurationTargetPos);
-			points = this._projectile.GetProjectileSamples().Select(s=>s.Position2D).ToList();
+			Projectile.InitialAngleDuration initialAngleDuration = new Projectile.InitialAngleDuration();
+			initialAngleDuration.Duration = this._duration;
+			initialAngleDuration.InitAngle = this._initialAngle;
+//			this._projectile = new Projectile(this.initialPos2D, 0.6f, initialAngleDuration);
+//			points = this._projectile.GetProjectileSamples().Select(s=>s.Position2D).ToList();
 		}
 		return points;
 	}
