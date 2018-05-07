@@ -114,7 +114,12 @@ public class Projectile
 	float GetRotateAngle(Vector2 initialPos2D, Vector2 targetPos2D)
 	{
 		Vector2 diffVec2 = targetPos2D - initialPos2D;
-		return  Mathf.Acos(Vector2.Dot(diffVec2.normalized, Vector2.right)) * Mathf.Rad2Deg;
+		
+		int sign = 1;
+		if (diffVec2.y < 0)
+			sign = -1;
+		
+		return  sign*Mathf.Acos(Vector2.Dot(diffVec2.normalized, Vector2.right)) * Mathf.Rad2Deg;
 	}
 
 	float CalculateGravity(float deltaX, float duration, float angle)
@@ -189,8 +194,7 @@ public class Projectile
 			currentProjectileSpentTime += timeInterval;
 			overalTime += timeInterval;
 
-			Vector3 currentPos = GetPosition(currentProjectileSpentTime, this.initialVelocity2, this.initialAngle2,
-				initialPos2D2, this.gravity2);
+			Vector3 currentPos = GetPosition(currentProjectileSpentTime, this.initialVelocity2, this.initialAngle2, initialPos2D2, this.gravity2);
 
 			projectilePoints.Add(new ProjectilePoint(overalTime,
 				RotatePointAroundPivot(currentPos, rotationPivot, new Vector3(0, 0, rotationAngle))));
